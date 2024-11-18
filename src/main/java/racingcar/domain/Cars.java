@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -25,6 +26,22 @@ public class Cars {
         return new CarsDto(cars.stream()
                 .map(Car::createCarDto)
                 .toList());
+    }
+
+    public List<String> decideWinner() {
+        int maxDistance = findMaxDistance();
+
+        List<String> winners = new ArrayList<>();
+        cars.stream()
+                .filter(car -> car.getDistance() == maxDistance)
+                .forEach(car -> winners.add(car.getName()));
+        
+        return winners;
+    }
+
+    private int findMaxDistance() {
+        return cars.stream().mapToInt(Car::getDistance)
+                .max().getAsInt();
     }
 
     private static void validate(List<Car> cars) {

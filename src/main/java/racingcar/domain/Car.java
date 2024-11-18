@@ -27,6 +27,14 @@ public class Car {
         return new CarDto(this.name, this.distance);
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
     private void validate(String name) {
         if (name.isEmpty() || name.length() > 5) {
             throw new IllegalArgumentException(ErrorMessage.CAR_NAME_LENGTH_ERROR.getErrorMessage());

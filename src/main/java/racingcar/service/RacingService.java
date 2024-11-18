@@ -27,4 +27,8 @@ public class RacingService {
         }
         return carsStatus;
     }
+
+    public List<String> decideWinner() {
+        return cars.decideWinner();
+    }
 }

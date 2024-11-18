@@ -24,5 +24,8 @@ public class RacingController {
 
         List<CarsDto> carsStatus = racingService.race();
         outputView.printCarsStatus(carsStatus);
+
+        List<String> winners = racingService.decideWinner();
+        outputView.printWinners(winners);
     }
 }
