@@ -17,8 +17,8 @@ public class RacingController {
     }
 
     public void run() {
-        String carNamesRaw = inputView.inputCarNames();
-        racingService.setCarNames(carNamesRaw);
+        racingService.setCarNames(inputView.inputCarNames());
+        racingService.setCount(inputView.inputCount());
 
 
     }
