@@ -23,5 +23,6 @@ public class RacingController {
         racingService.setCount(inputView.inputCount());
 
         List<CarsDto> carsStatus = racingService.race();
+        outputView.printCarsStatus(carsStatus);
     }
 }

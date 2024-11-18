@@ -1,5 +1,6 @@
 package racingcar.domain.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CarsDto {
@@ -8,5 +9,9 @@ public class CarsDto {
 
     public CarsDto(List<CarDto> cars) {
         this.cars = cars;
+    }
+
+    public List<CarDto> getCarsStageStatus() {
+        return new ArrayList<>(cars);
     }
 }
