@@ -1,7 +1,9 @@
 package racingcar.domain;
 
 import java.util.Objects;
+import racingcar.RandomNumberMachine.RandomNumberMachine;
 import racingcar.constant.ErrorMessage;
+import racingcar.domain.dto.CarDto;
 
 public class Car {
 
@@ -12,6 +14,17 @@ public class Car {
         validate(name);
         this.name = name;
         this.distance = 0;
+    }
+
+    public void race() {
+        int randomNumber = RandomNumberMachine.createRandomNumber();
+        if (randomNumber >= 4) {
+            this.distance += 1;
+        }
+    }
+
+    public CarDto createCarDto() {
+        return new CarDto(this.name, this.distance);
     }
 
     private void validate(String name) {

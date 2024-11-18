@@ -1,5 +1,7 @@
 package racingcar.controller;
 
+import java.util.List;
+import racingcar.domain.dto.CarsDto;
 import racingcar.service.RacingService;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
@@ -20,6 +22,6 @@ public class RacingController {
         racingService.setCarNames(inputView.inputCarNames());
         racingService.setCount(inputView.inputCount());
 
-
+        List<CarsDto> carsStatus = racingService.race();
     }
 }

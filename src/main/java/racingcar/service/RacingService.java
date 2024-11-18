@@ -1,8 +1,10 @@
 package racingcar.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import racingcar.Parser.Parser;
 import racingcar.domain.Cars;
+import racingcar.domain.dto.CarsDto;
 
 public class RacingService {
 
@@ -18,5 +20,11 @@ public class RacingService {
         this.count = Parser.parseCount(countRaw);
     }
 
-
+    public List<CarsDto> race() {
+        List<CarsDto> carsStatus = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            carsStatus.add(cars.race());
+        }
+        return carsStatus;
+    }
 }

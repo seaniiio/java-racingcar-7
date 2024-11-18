@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import racingcar.constant.ErrorMessage;
+import racingcar.domain.dto.CarsDto;
 
 public class Cars {
 
@@ -17,6 +18,13 @@ public class Cars {
         List<Car> cars = carNames.stream().map(Car::new).toList();
         validate(cars);
         return new Cars(cars);
+    }
+
+    public CarsDto race() {
+        cars.stream().forEach(Car::race);
+        return new CarsDto(cars.stream()
+                .map(Car::createCarDto)
+                .toList());
     }
 
     private static void validate(List<Car> cars) {
