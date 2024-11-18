@@ -9,7 +9,7 @@ public class Parser {
     private static final String DELIMITER = ",";
 
     public static List<String> parseCarNames(String carNamesRaw) {
-        return Arrays.stream(carNamesRaw.split(DELIMITER)).toList();
+        return Arrays.stream(carNamesRaw.split(DELIMITER)).map(String::trim).toList();
     }
 
     public static int parseCount(String countRaw) {
