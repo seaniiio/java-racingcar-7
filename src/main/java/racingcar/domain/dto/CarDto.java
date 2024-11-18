@@ -11,6 +11,6 @@ public class CarDto {
     }
 
     public String carStatusMessage() {
-        return name + ":" + "-".repeat(distance);
+        return name + " : " + "-".repeat(distance);
     }
 }
