@@ -35,7 +35,7 @@ public class Cars {
         cars.stream()
                 .filter(car -> car.getDistance() == maxDistance)
                 .forEach(car -> winners.add(car.getName()));
-        
+
         return winners;
     }
 
